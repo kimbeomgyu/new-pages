@@ -1,6 +1,7 @@
 (()=>{
     const carouselUL = document.querySelector(".carousel-list");
     const imageInput = document.querySelector("#image-upload-input");
+    const sampleButton = document.querySelector("#sample-image-button");
     const prevButton = document.querySelector(".prev-button");
     const nextButton = document.querySelector(".next-button");
 
@@ -91,8 +92,6 @@
         const items = document.querySelectorAll(".carousel-item");
         
         if (target.files) {
-            
-
             for (const file of target.files) {
                 const reader = new FileReader();
             
@@ -101,11 +100,21 @@
                     carouselUL.insertBefore(createTag(imageURL),items[Math.floor(items.length/2)]);
                     changeTransform();
                 }
-
                 reader.readAsDataURL(file);
             }
         }
     };
+
+    function settingImages(e) {
+        e.preventDefault()
+        const items = document.querySelectorAll(".carousel-item");
+        for (let i = 1; i <= 5; i++) { 
+            const imageURL = `/src/images/img${i}.svg`
+            console.log(imageURL)
+            carouselUL.insertBefore(createTag(imageURL),items[Math.floor(items.length/2)]);
+            changeTransform();
+        }
+    }
 
     function throttle(callback, wait) {// callback: 실행 대상인 함수
         let waiting = true;  // true로 주어서 콜백함수가
@@ -128,6 +137,7 @@
 
     prevButton.addEventListener("click", prev);
     nextButton.addEventListener("click", next);
+    sampleButton.addEventListener("click", settingImages)
     window.addEventListener("keydown", e => {
         if (e.key == "ArrowLeft") {
             next();
