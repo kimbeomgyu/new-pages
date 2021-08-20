@@ -109,7 +109,7 @@
         e.preventDefault()
         const items = document.querySelectorAll(".carousel-item");
         for (let i = 1; i <= 5; i++) { 
-            const imageURL = `/src/images/img${i}.svg`
+            const imageURL = `../images/img${i}.svg`
             console.log(imageURL)
             carouselUL.insertBefore(createTag(imageURL),items[Math.floor(items.length/2)]);
             changeTransform();
