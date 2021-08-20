@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/carousel.css">
+    <title>이미지 캐러셀</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="carousel">
+        <h1 class="util-ir">캐러셀 이미지 리스트</h1>
+        <div class="carousel-container">
+            <ul class="carousel-list">
+               
+            </ul>
+        </div>
+        <button type="button" class="prev-button">&lt; Prev</button>
+        <button type="button" class="next-button">Next &gt;</button>
+    </section>
+    <form action="" class="image-upload">
+        <input type="file" multiple accept="image/*" id="image-upload-input">
+        <label for="image-upload-input">이미지 업로드</label>
+    </form>
+    <script src="/src/js/carousel.js"></script>
+</body>
+</html>
